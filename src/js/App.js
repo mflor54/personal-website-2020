@@ -10,10 +10,15 @@ import store from './store';
 
 const useStyles = createUseStyles(({ palette }) => ({
     container : {
-        height : '100%',
-        width : '100%',
+        position : 'relative',
         display : 'flex',
-        flexDirection : 'column'
+        flexDirection : 'column',
+        backgroundColor : palette.common.background,
+        color : palette.text.main
+    },
+    content : {
+        width : '100%',
+        height : '100%',
     }
 }), { name : 'RoutingApp' });
 
@@ -23,9 +28,11 @@ function RoutingApp() {
     return (
         <div className={ classes.container }>
             <AppBar />
-            <About />
-            <Skills />
-            <Experience />
+            <div className={ classes.content }>
+                <About />
+                <Skills />
+                <Experience />
+            </div>
         </div>
     );
 }

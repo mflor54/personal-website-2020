@@ -8,7 +8,8 @@ const useStyles = createUseStyles(({ palette }) => ({
         minHeight : '100vh',
         position : 'relative',
         display : 'flex',
-        flexDirection : 'column'
+        flexDirection : 'column',
+        padding : '8px'
     }
 }), { name : 'SectionContainer' });
 
