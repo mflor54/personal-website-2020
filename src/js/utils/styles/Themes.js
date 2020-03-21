@@ -23,8 +23,8 @@ themesObj.light = {
             // rgba(0, 0, 0, 0.08) 0px 10px 20px -5px
         },
         text : {
-            main : '#00479E',
-            light : '',
+            main : '#141210',
+            light : '#DBDBDB',
             disabled : '',
         },
     }
@@ -50,7 +50,7 @@ themesObj.dark = {
         },
         text : {
             main : '#FFFFFF',
-            light : '',
+            light : '#333',
             disabled : ''
         }
     }

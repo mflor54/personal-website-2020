@@ -14,7 +14,10 @@ export default function Skills() {
     const classes = useStyles();
 
     return (
-        <SectionContainer sectionName={ 'skills' }>
+        <SectionContainer
+            sectionName={ 'What I work with' }
+            iconKey={ 'skills' }
+        >
             SKILLS
         </SectionContainer>
     );

@@ -14,7 +14,10 @@ export default function Experience() {
     const classes = useStyles();
 
     return (
-        <SectionContainer sectionName={ 'experience' }>
+        <SectionContainer
+            sectionName={ 'Where I\'ve worked' }
+            iconKey={ 'experience' }
+        >
             EXPERIENCE
         </SectionContainer>
     );

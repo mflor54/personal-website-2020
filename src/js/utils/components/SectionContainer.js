@@ -14,13 +14,18 @@ const useStyles = createUseStyles(({ palette }) => ({
 }), { name : 'SectionContainer' });
 
 export default function SectionContainer({
-    children, sectionName ,classNames
+    children, sectionName ,iconKey, classNames
 }) {
     const classes = useStyles();
 
     return (
         <div className={ classes.container }>
-            { sectionName && <SectionHeader title={ sectionName }/> }
+            { sectionName &&
+                <SectionHeader
+                    title={ sectionName }
+                    iconKey={ iconKey }
+                />
+            }
             { children }
         </div>
     );

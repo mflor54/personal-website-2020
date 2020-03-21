@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { createUseStyles } from 'react-jss';
 import { mdiBriefcaseOutline, mdiCodeTags } from '@mdi/js';
 import Icon from '@mdi/react'
@@ -14,9 +15,9 @@ const useStyles = createUseStyles(({ palette }) => ({
         minHeight : '56px',
         display : 'flex',
         flexDirection : 'row',
-        justifyContent : 'flex-start',
+        justifyContent : 'center',
         alignItems : 'center',
-        textTransform : 'uppercase',
+        // textTransform : 'uppercase',
         fontSize : '2rem',
         '& svg' : {
             marginLeft : '8px'
@@ -24,16 +25,18 @@ const useStyles = createUseStyles(({ palette }) => ({
     }
 }), { name : 'SectionHeader' });
 
-export default function SectionHeader({ children, title }) {
+export default function SectionHeader({ children, title, iconKey }) {
+    const theme = useSelector( s => s.core.theme);
     const classes = useStyles();
 
     return (
         <div className={ classes.container }>
             { title }
-            <Icon
-                path={ sectionIconDict[title] }
+            {/* <Icon
+                path={ sectionIconDict[iconKey] }
                 size={ 2 }
-            />
+                color={ theme == 'light' ? 'black' : 'white' }
+            /> */}
         </div>
     );
 }

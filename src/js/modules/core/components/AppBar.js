@@ -1,11 +1,12 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     mdiWhiteBalanceSunny, mdiWeatherNight,
     mdiLinkedin, mdiGit
 } from '@mdi/js';
-import Icon from '@mdi/react'
+import Icon from '@mdi/react';
+import window from 'global/window';
 import { toggleTheme } from '../coreActions';
 
 const useStyles = createUseStyles(({ palette }) => ({
@@ -23,17 +24,20 @@ const useStyles = createUseStyles(({ palette }) => ({
         // top : '0px'
     },
     name : {
+        color : palette.text.light,
         display : 'flex',
         justifyContent : 'center',
-        alignItems : 'center'
+        alignItems : 'center',
+        fontSize : '1.2rem'
     },
     media : {
         display : 'flex',
         flexDirection : 'row',
         justifyContent : 'center',
         alignItems : 'center',
-        '& > *' : {
-            marginLeft : '8px'
+        '& > svg' : {
+            marginLeft : '8px',
+            cursor : 'pointer'
         }
     }
 }), { name : 'AppBar' });
@@ -43,9 +47,37 @@ export default function AppBar() {
     const theme = useSelector( s => s.core.theme);
     const classes = useStyles();
 
+    const onClickLink = useCallback( url => {
+        window.open(url, '_blank');
+    }, []);
+
     const onToggleTheme = useCallback(() => {
         dispatch(toggleTheme());
     }, [theme]);
+
+    const iconDictionary = useMemo(() => ({
+        linkedin : {
+            onClick : () => {
+                const url = 'https://linkedin.com/in/michael-flor/';
+                return onClickLink(url);
+            },
+            path : mdiLinkedin,
+            color : 'blue'
+        },
+        git : {
+            onClick : () => {
+                const url = 'https://github.com/mflor54';
+                return onClickLink(url);
+            },
+            path : mdiGit,
+            color : 'red'
+        },
+        theme : {
+            onClick : () => onToggleTheme(),
+            path : theme == 'light' ? mdiWhiteBalanceSunny : mdiWeatherNight,
+            color : theme == 'light' ? 'black' : 'white',
+        }
+    }), [theme]);
 
     return (
         <div className={ classes.container }>
@@ -53,22 +85,15 @@ export default function AppBar() {
                 MICHAEL FLOR
             </div>
             <div className={ classes.media }>
-                <Icon
-                    path={ mdiLinkedin }
-                    size={ 1 }
-                    color={ theme == 'light' ? 'black' : 'white' }
-                />
-                <Icon
-                    path={ mdiGit }
-                    size={ 1 }
-                    color={ theme == 'light' ? 'black' : 'white' }
-                />
-                <Icon
-                    onClick={ onToggleTheme }
-                    path={ theme == 'light' ? mdiWhiteBalanceSunny : mdiWeatherNight }
-                    size={ 1 }
-                    color={ theme == 'light' ? 'black' : 'white' }
-                />
+                { Object.keys(iconDictionary).map((k, i) => (
+                    <Icon
+                        key={ `${k+i}` }
+                        onClick={ iconDictionary[k].onClick }
+                        path={ iconDictionary[k].path }
+                        size={ 1 }
+                        color={ iconDictionary[k].color }
+                    />
+                )) }
             </div>
         </div>
     );

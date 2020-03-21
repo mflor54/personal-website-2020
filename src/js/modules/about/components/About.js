@@ -22,11 +22,29 @@ const useStyles = createUseStyles(({ palette }) => ({
         justifyContent : 'center',
         alignItems : 'center',
         position : 'absolute',
-        top : '0',
-        fontSize : '2.5rem',
-        textAlign : 'center'
+        top : '24px',
+        fontSize : '3.5rem',
+        fontWeight : 'bolder',
+        textAlign : 'center',
+        '@media (max-width : 425px)' : {
+            top : '8px',
+            fontSize : '2.5rem'
+        }
+    },
+    about : {
+        display : 'flex',
+        flexDirection : 'column',
+        justifyContent : 'center',
+        position : 'relative',
+        alignItems : 'center',
+        textAlign : 'center',
+        fontSize : '1.5rem'
+    },
+    italic : {
+        fontStyle : 'italic',
+        fontWeight : 'bolder'
     }
-}));
+}), { name : 'About' });
 
 export default function About() {
     const theme = useSelector( s => s.core.theme);
@@ -39,7 +57,16 @@ export default function About() {
                     Hey there! I'm Mike :)
                 </div>
                 <div className={ classes.about }>
-
+                    <p>
+                        I'm a front end engineer from NYC
+                        (who dabbles on the server side every now and then).
+                        I <span className={ classes.italic }>love</span> creating
+                        wonderful products and even more so, collaborating on those
+                        projects with awesome people.
+                    </p>
+                    <p>
+                        Want to learn more about my skillset? Check it about below!
+                    </p>
                 </div>
             </div>
         </SectionContainer>
