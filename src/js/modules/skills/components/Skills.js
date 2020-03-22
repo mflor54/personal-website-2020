@@ -1,14 +1,18 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SectionContainer } from 'components';
+import SkillsList from './SkillsList';
 
 const useStyles = createUseStyles(({ palette }) => ({
     container : {
         width : '100%',
         height : '100%',
-        display : 'flex'
+        display : 'flex',
+        flexDirection : 'column',
+        flexWrap : 'wrap',
+        flexGrow : '1'
     }
-}));
+}), { name : 'Skills' });
 
 export default function Skills() {
     const classes = useStyles();
@@ -18,7 +22,11 @@ export default function Skills() {
             sectionName={ 'What I work with' }
             iconKey={ 'skills' }
         >
-            SKILLS
+            <div className={ classes.container }>
+                <SkillsList keyName={ 'Frontend' }/>
+                <SkillsList keyName={ 'Backend' }/>
+                <SkillsList keyName={ 'Testing and Version Control' }/>
+            </div>
         </SectionContainer>
     );
 }
