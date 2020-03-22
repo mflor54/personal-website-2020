@@ -13,16 +13,15 @@ const useStyles = createUseStyles(({ palette }) => ({
         display : 'flex',
         flexGrow : '1',
         flexDirection : 'column',
-        justifyContent : 'center',
+        justifyContent : 'space-between',
         alignItems : 'center'
     },
     greeting : {
+        height: 'auto',
         display : 'flex',
         flexDirection : 'row',
         justifyContent : 'center',
         alignItems : 'center',
-        position : 'absolute',
-        top : '24px',
         fontSize : '3.5rem',
         fontWeight : 'bolder',
         textAlign : 'center',
@@ -32,7 +31,9 @@ const useStyles = createUseStyles(({ palette }) => ({
         }
     },
     about : {
+        width : '80%',
         display : 'flex',
+        flexGrow : '1',
         flexDirection : 'column',
         justifyContent : 'center',
         position : 'relative',

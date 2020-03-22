@@ -9,7 +9,8 @@ const useStyles = createUseStyles(({ palette }) => ({
         position : 'relative',
         display : 'flex',
         flexDirection : 'column',
-        padding : '8px'
+        padding : '8px',
+        alignItems : 'center'
     }
 }), { name : 'SectionContainer' });
 

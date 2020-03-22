@@ -25,7 +25,8 @@ const useStyles = createUseStyles(({ palette }) => ({
     skill : {
         border : '1px solid',
         padding : '8px 16px',
-        boxShadow : '0 0 10px #888'
+        boxShadow : '0 0 10px #888',
+        marginBottom : '8px'
     }
 }), { name : 'SkillsList' });
 

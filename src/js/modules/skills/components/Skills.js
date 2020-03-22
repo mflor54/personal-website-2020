@@ -5,12 +5,13 @@ import SkillsList from './SkillsList';
 
 const useStyles = createUseStyles(({ palette }) => ({
     container : {
-        width : '100%',
+        width : '80%',
         height : '100%',
         display : 'flex',
         flexDirection : 'column',
         flexWrap : 'wrap',
-        flexGrow : '1'
+        flexGrow : '1',
+        // alignItems : 'center'
     }
 }), { name : 'Skills' });
 
