@@ -17,6 +17,7 @@ themesObj.light = {
             white : '#FFFFFF',
             background : '#FFFFFF',
             icon : '#FFFFFF',
+            appBarBackground : '#F8F7FF',
             // For rows or buttons
             boxShadow : '0 0 10px #888',
             // Box shadow based off Hulu components
@@ -47,6 +48,7 @@ themesObj.dark = {
             white : '#FFFFFF',
             background : '#212121',
             icon : '#FFFFFF',
+            appBarBackground : '#262626'
         },
         text : {
             main : '#FFFFFF',

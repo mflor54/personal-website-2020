@@ -17,11 +17,11 @@ const useStyles = createUseStyles(({ palette }) => ({
         flexDirection : 'row',
         justifyContent : 'space-between',
         alignItems : 'center',
+        backgroundColor : palette.common.appBarBackground,
         padding : '8px',
-        // boxShadow : '0 0 10px #888',
-        // TODO : Make this a fixed header on scroll
-        // position : 'sticky',
-        // top : '0px'
+        position : 'fixed',
+        top : '0',
+        zIndex : '100'
     },
     name : {
         color : palette.text.light,

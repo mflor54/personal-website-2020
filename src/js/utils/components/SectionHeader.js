@@ -2,41 +2,33 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { createUseStyles } from 'react-jss';
 import { mdiBriefcaseOutline, mdiCodeTags } from '@mdi/js';
-import Icon from '@mdi/react'
-
-const sectionIconDict = {
-    'experience' : mdiBriefcaseOutline,
-    'skills' : mdiCodeTags,
-};
 
 const useStyles = createUseStyles(({ palette }) => ({
     container : {
         width : '100%',
         minHeight : '56px',
         display : 'flex',
-        flexDirection : 'row',
+        flexDirection : 'column',
         justifyContent : 'center',
         alignItems : 'center',
-        // textTransform : 'uppercase',
         fontSize : '2rem',
-        '& svg' : {
-            marginLeft : '8px'
-        }
+        '& hr' : {
+            width : '80%',
+            border : p => `1px solid ${p.barColor}`,
+            boxShadow : '0 0 10px #888'
+        },
     }
 }), { name : 'SectionHeader' });
 
-export default function SectionHeader({ children, title, iconKey }) {
+export default function SectionHeader({ title }) {
     const theme = useSelector( s => s.core.theme);
-    const classes = useStyles();
+    const barColor = theme == 'light' ? '#000' : '#FFF'
+    const classes = useStyles({ barColor });
 
     return (
         <div className={ classes.container }>
             { title }
-            {/* <Icon
-                path={ sectionIconDict[iconKey] }
-                size={ 2 }
-                color={ theme == 'light' ? 'black' : 'white' }
-            /> */}
+            <hr />
         </div>
     );
 }

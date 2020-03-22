@@ -46,7 +46,8 @@ const skillsDict = {
         color : '',
         skills : [
             'Mocha', 'Chai', 'Jest',
-            'Enzyme', 'Git', 'SourceTree'
+            'Enzyme', 'Git', 'Puppeteer',
+            'SourceTree'
         ]
     }
 }
