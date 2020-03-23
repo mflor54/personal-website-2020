@@ -31,7 +31,6 @@ export default function JobContainer({
             <JobDate date={ date }/>
             <JobPosition position={ position }/>
             <JobDescription description={ () => description() }/>
-            {/* <hr /> */}
         </div>
     );
 }

@@ -40,7 +40,7 @@ const skillsDict = {
     },
     'Backend' : {
         color : '',
-        skills : ['Node.js', 'Express', 'MongoDB', 'PostgreSQL']
+        skills : ['Node.js', 'Express', 'Ruby on Rails', 'MongoDB', 'PostgreSQL']
     },
     'Testing and Version Control' : {
         color : '',
@@ -59,16 +59,17 @@ export default function SkillsList({ children, keyName }) {
         skillsDict[keyName].skills
     ), [keyName, skillsDict]);
 
-    useEffect(() => {
-        console.log('dict', skillsDictForTitle);
-    }, [keyName]);
-
     return (
         <div className={ classes.container }>
             <div className={ classes.title }>{ keyName }</div>
             <div className={ classes.skills }>
                 { skillsDictForTitle.map((k, i) => (
-                    <div className={ classes.skill }>{skillsDictForTitle[i]}</div>
+                    <div
+                        key={ `${skillsDictForTitle[i]}` }
+                        className={ classes.skill }
+                    >
+                        {skillsDictForTitle[i]}
+                    </div>
                 )) }
             </div>
         </div>
