@@ -66,7 +66,7 @@ export default function About() {
                         projects with awesome people.
                     </p>
                     <p>
-                        Want to learn more about my skillset? Check it about below!
+                        Want to learn more about my skillset? Check it out below!
                     </p>
                 </div>
             </div>
