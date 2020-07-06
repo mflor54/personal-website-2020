@@ -14,12 +14,26 @@ const useStyles = createUseStyles(({ palette }) => ({
         display : 'flex',
         flexDirection : 'column',
         backgroundColor : palette.common.background,
-        color : palette.text.main
+        color : palette.text.main,
+        justifyContent : 'center',
+        alignItems : 'center'
+    },
+    innerContainer : {
+        maxWidth : '1080px',
+        height : '100%',
+        display : 'flex',
+        flexDirection : 'column',
+        justifyContent : 'center',
+        alignItems : 'center'
     },
     content : {
         width : '100%',
         height : '100%',
-        marginTop : '80px'
+        marginTop : '80px',
+        display : 'flex',
+        justifyContent : 'center',
+        alignItems : 'center',
+        flexDirection : 'column'
     }
 }), { name : 'RoutingApp' });
 
@@ -28,11 +42,13 @@ function RoutingApp() {
 
     return (
         <div className={ classes.container }>
-            <AppBar />
-            <div className={ classes.content }>
-                <About />
-                <Skills />
-                <Experience />
+            <div className={ classes.innerContainer }>
+                <AppBar />
+                <div className={ classes.content }>
+                    <About />
+                    <Skills />
+                    <Experience />
+                </div>
             </div>
         </div>
     );

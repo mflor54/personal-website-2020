@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { createUseStyles } from 'react-jss';
-import { mdiHumanGreeting } from '@mdi/js';
-import Icon from '@mdi/react';
 import { SectionContainer } from 'components';
 
 const useStyles = createUseStyles(({ palette }) => ({
@@ -13,10 +11,10 @@ const useStyles = createUseStyles(({ palette }) => ({
         display : 'flex',
         flexGrow : '1',
         flexDirection : 'column',
-        justifyContent : 'space-between',
+        justifyContent : 'space-evenly',
         alignItems : 'center'
     },
-    greeting : {
+    name : {
         height: 'auto',
         display : 'flex',
         flexDirection : 'row',
@@ -54,19 +52,20 @@ export default function About() {
     return (
         <SectionContainer>
             <div className={ classes.container }>
-                <div className={ classes.greeting }>
-                    Hey there! I'm Mike :)
+                <div className={ classes.name }>
+                    Michael Flor
                 </div>
                 <div className={ classes.about }>
                     <p>
-                        I'm a front end engineer from NYC
-                        (who dabbles on the server side every now and then).
-                        I <span className={ classes.italic }>love</span> creating
-                        wonderful products and even more so, collaborating on those
-                        projects with awesome people.
+                        I'm a self-taught web developer from NYC with a <span className={ classes.italic }>strong</span> passion
+                        for building impactful applications and teaching others how to code. My goal is to help beginners learn how to code
+                        like professionals do and instill in them that you don't need to be a computer science
+                        wizard to get into the field of software engineering.
                     </p>
                     <p>
-                        Want to learn more about my skillset? Check it out below!
+                        If you want to learn more about my skillset please continue scrolling!
+                        Want to get in touch? Feel free email me at mflor54@gmail.com or visit one of
+                        some of my profiles by clicking on the links above :D
                     </p>
                 </div>
             </div>

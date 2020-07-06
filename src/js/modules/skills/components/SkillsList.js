@@ -23,7 +23,7 @@ const useStyles = createUseStyles(({ palette }) => ({
         }
     },
     skill : {
-        border : '1px solid',
+        border : '0px solid',
         padding : '8px 16px',
         boxShadow : '0 0 10px #888',
         marginBottom : '8px'
@@ -40,14 +40,14 @@ const skillsDict = {
     },
     'Backend' : {
         color : '',
-        skills : ['Node.js', 'Express', 'Ruby on Rails', 'MongoDB', 'PostgreSQL']
+        skills : ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Python/Django', 'Ruby on Rails']
     },
     'Testing and Version Control' : {
         color : '',
         skills : [
             'Mocha', 'Chai', 'Jest',
-            'Enzyme', 'Git', 'Puppeteer',
-            'SourceTree'
+            'Enzyme', 'Puppeteer',
+            'Git', 'SourceTree'
         ]
     }
 }
